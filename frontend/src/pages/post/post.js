@@ -32,7 +32,7 @@ const PostContainer = ({ className }) => {
 		});
 	}, [dispatch, params.id, isCreating]);
 
-	if (isEditing) {
+	if (isLoading) {
 		return null;
 	}
 
