@@ -40,6 +40,7 @@ export const PostContent = styled(PostContentContainer)`
 	& .post-text {
 		white-space: pre-line;
 		font-size: 18px;
+		min-height: 50px;
 	}
 `;
 

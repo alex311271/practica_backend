@@ -14,13 +14,14 @@ const MainContainer = ({ className }) => {
 
 	useEffect(() => {
 		request(`/posts?search=${searchPhrase}&page=${page}&limit=${PAGINATION_LIMIT}`).then(
-			({ res: { posts, lastPage } }) => {
+			({ data: { posts, lastPage } }) => {
 				setPosts(posts);
 				setLastPage(lastPage);
 			},
 		);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [page, shouldSearch]);
+
+	}, [page, shouldSearch, searchPhrase]);
+	console.log(posts)
 
 	const startDelayedSearch = useMemo(() => debounce(setShouldSearch, 1000), []);
 
